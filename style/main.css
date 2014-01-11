@@ -1,0 +1,55 @@
+td.selected{
+  color: red;
+}
+.main{
+  width: 95%;
+  margin: auto;
+}
+#result{
+    margin:auto;
+    height: 500px;
+    width: 80%;
+    background-color: rgba(255,255,255,0.9);
+    top: 20px;
+    left: 100px;
+    position: absolute;
+    display:none;
+}
+#result > p{
+  text-align: right;
+  margin:-1em;;
+}
+#bingoNum{
+  font-size: 19em;
+  width: 60%;
+  height: 500px;
+  text-align: center;
+  float:left;
+  padding:0px;
+  display:table-cell;
+}
+#bingoNum > span{
+ line-height:500px;
+}
+#rockzaemon{
+  max-height: 495px;
+  float:left;
+}
+#bingo{
+  margin:auto;
+}
+#bingo td {
+  border:solid 3px black;
+  font-size: 3.5em;
+  font-weight: bold;
+}
+#bingoStartBtn{
+  width: 100%;
+  font-size: 4em;
+}
+#closeBtn{
+  font-size:2em;
+}
+footer{
+  clear: left;
+}
