@@ -2,9 +2,19 @@ $(function(){
 
     var bingoMax = 75; //75が最大値なビンゴが一番多いっぽい
     var drumLength = 0;
-    
     var drumTypes = ['short.ogg','middle.ogg','long.ogg'];
-    var bingoList = JSON.parse(localStorage['bingoList']);
+    var initializedBingoList = function(){
+        var arr = [];
+        for(var i=1;i<=bingoMax;i++){arr.push(i)}
+        return arr;
+    };
+
+    var bingoList = new function(){
+        if(localStorage['bingoList'] == undefined){
+            localStorage['bingoList'] = JSON.stringify(initializedBingoList());
+        }
+        return JSON.parse(localStorage['bingoList'])
+    };
     console.log(bingoList);
     var audioElm = document.getElementById('drumroll');
     var bingoElm = $('#bingo');
@@ -42,11 +52,7 @@ $(function(){
         },2000);
     });
     $('#initializeBtn').on('click',function(){
-        var arr = []; 
-        for(var i=1;i<=bingoMax;i++){arr.push(i)}
-        console.log(arr);
-        bingoList = arr;
-        localStorage['bingoList'] = JSON.stringify(bingoList);
+        localStorage['bingoList'] = JSON.stringify(initializedBingoList());
         location.reload();
     });
     $('#closeBtn').on('click',function(){
